@@ -7,34 +7,45 @@ public class Controlls : MonoBehaviour
 
     private Transform Player_knight;
     
-    private float curSpeed, targetSpeed, rotSpeed;
-    private float ForwardSpeed = 30.0f;
-    private float BackwardSpeed = 30.0f; 
+ 
 
+    //anim = GetComponent<Animator>(); 
 
+    public float speed = 6.0f;
+    public float jumpSpeed = 8.0f;
+    public float gravity = 20.0f;
 
+    private Vector3 moveDirection = Vector3.zero;
+    private CharacterController controller;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //anim = GetComponent<Animator>(); 
+        controller = GetComponent<CharacterController>();
 
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        UpdateControl();
+        if (controller.isGrounded)
+        {
+   
+
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection = moveDirection * speed;
+
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpSpeed;
+            }
+        }
+
+        moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
+
+        // Move the controller
+        controller.Move(moveDirection * Time.deltaTime);
     }
-
-
-    void UpdateControl()
-    {
-        
-
-
-    }
-
 
 
 
