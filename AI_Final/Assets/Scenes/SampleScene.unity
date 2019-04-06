@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 44888772}
   - component: {fileID: 44888774}
   - component: {fileID: 44888773}
+  - component: {fileID: 44888775}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -137,13 +138,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44888771}
-  m_LocalRotation: {x: 0.17541762, y: -0, z: -0, w: 0.98449415}
-  m_LocalPosition: {x: 8.48, y: 3.8400002, z: -1.0799999}
+  m_LocalRotation: {x: 0.093657896, y: -0, z: -0, w: 0.99560446}
+  m_LocalPosition: {x: -0.8316927, y: 2.06, z: -2.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 20.206001, y: 0, z: 0}
+  m_Father: {fileID: 694690671}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 10.748, y: 0, z: 0}
 --- !u!81 &44888773
 AudioListener:
   m_ObjectHideFlags: 0
@@ -194,6 +195,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &44888775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44888771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa8c66d9806a3e48a9420aa819b788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100052, guid: f3392e95529ae7540ad53657e3d0ce7d, type: 3}
       propertyPath: m_Name
-      value: UD_demo_character
+      value: Enemy_AI
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: f3392e95529ae7540ad53657e3d0ce7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -378,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: f3392e95529ae7540ad53657e3d0ce7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: f3392e95529ae7540ad53657e3d0ce7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -534,11 +547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.5
+      value: -16.63
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_LocalRotation.x
@@ -604,7 +617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8950b910f0b6af49b62f2419f862d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  Player: {fileID: 0}
+  speed: 3
   jumpSpeed: 8
   gravity: 20
 --- !u!54 &1168275191
@@ -640,7 +654,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!65 &1168275193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -755,6 +769,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1033181831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1408474602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408474601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbce4e5955ace414c8eadfa3ef303eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy_AI: {fileID: 694690671}
+  MoveSpeed: 4
 --- !u!54 &1408474604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -782,7 +810,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Size: {x: 1, y: 0.1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1456840701
 GameObject:
