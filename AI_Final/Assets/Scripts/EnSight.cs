@@ -8,8 +8,7 @@ public class EnSight : MonoBehaviour
     public Transform  Enemy_AI;
 
     public int MoveSpeed = 4;  // original line of sight 
-    int MaxDist = 10;
-    int MinDist = 10;
+    int Dist = 10;
 
 
 
@@ -31,20 +30,15 @@ public class EnSight : MonoBehaviour
 
 
 
-        if (Vector3.Distance(transform.position, Enemy_AI.position) <= MinDist)                     // player is in range and will go after player no matter the derection coming from 
+        if (Vector3.Distance(transform.position, Enemy_AI.position) <= Dist)                     // player is in range and will go after player no matter the derection coming from 
         {
             transform.LookAt(Enemy_AI);
-
-
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-
-            if (Vector3.Distance(transform.position, Enemy_AI.position) <= MaxDist)
-            {
-                // Add the attack here 
-            }
-
+           
         }
 
     }
+
+
+
 }

@@ -14,6 +14,7 @@ public class Controlls : MonoBehaviour
     public float speed = 3f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
+    public float sound = 5f;
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
@@ -26,6 +27,7 @@ public class Controlls : MonoBehaviour
 
     void Update()
     {
+        
         
         if (controller.isGrounded)
         {
@@ -43,6 +45,7 @@ public class Controlls : MonoBehaviour
 
             if (Input.GetButton("Run"))
             {
+
                 moveDirection = moveDirection * (speed/1.5f);
             }
         }
@@ -55,8 +58,7 @@ public class Controlls : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
-
-
-
+ 
 
 }
+
