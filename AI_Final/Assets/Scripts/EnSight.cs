@@ -26,10 +26,6 @@ public class EnSight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
-
         if (Vector3.Distance(transform.position, Enemy_AI.position) <= Dist)                     // player is in range and will go after player no matter the derection coming from 
         {
             transform.LookAt(Enemy_AI);

@@ -55,7 +55,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMove.cs" />
      <Compile Include="Assets\Scripts\Controlls.cs" />
-     <Compile Include="Assets\Scripts\EnHear.cs" />
      <Compile Include="Assets\Scripts\EnSight.cs" />
      <Compile Include="Assets\Scripts\PlayerDeath.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
